@@ -1,0 +1,86 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	text-align: center;
+}
+
+.checkbox-container {
+	display: flex;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin: 1rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.checkbox-container input {
+	visibility: hidden;
+}
+
+.checkbox-container input:checked + label {
+	background: rgb(198, 198, 198);
+}
+
+.checkbox-container input:checked + label .ball {
+	animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+	0% {
+		transform: translateX(0) scale(1);
+	}
+	50% {
+		transform: translateX(1.5rem) scale(1.2);
+	}
+	100% {
+		transform: translateX(2.7rem) scale(1);
+	}
+}
+
+.checkbox-container input + label .ball {
+	animation: slideOff 0.3s linear forwards;
+}
+
+@keyframes slideOff {
+	0% {
+		transform: translateX(2.7rem) scale(1);
+	}
+	50% {
+		transform: translateX(1.5rem) scale(1.2);
+	}
+	100% {
+		transform: translateX(0) scale(1);
+	}
+}
+
+.checkbox-container label {
+	width: 5rem;
+	height: 2rem;
+	border-radius: 25px;
+	background: rgb(178, 178, 236);
+	position: relative;
+}
+
+.checkbox-container .ball {
+	height: 1.6rem;
+	width: 1.6rem;
+	background: blue;
+	position: absolute;
+	top: 3px;
+	left: 5px;
+	border-radius: 50%;
+}
+
+.checkbox-container span {
+	display: inline-block;
+	margin: 0 1rem;
+}
